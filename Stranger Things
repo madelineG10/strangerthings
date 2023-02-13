@@ -1,0 +1,26 @@
+# Welcome to Sonic Pi
+use_bpm 80
+use_synth :tech_saws
+live_loop :sound do
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+end
+live_loop :beat do
+  use_synth :bass_foundation
+  sample :drum_tom_lo_soft,  beat_stretch: 2.5, amp: 2
+  sleep 1
+end
