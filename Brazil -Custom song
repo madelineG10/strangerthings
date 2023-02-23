@@ -1,82 +1,85 @@
+# Welcome to Sonic Pi
 #mesure 1&3
-live_loop highnote1 do
-play :e4
-sleep 0.25
-play :gs4
-sleep .0625
-play :e4
-sleep .0625
-play :ds4
-sleep .25
-play :gs4
-sleep .0265
-play :ds4
-sleep .0265
+use_bpm 120
+use_synth :piano
+live_loop :top do
+  #M1
+  play :e4,sustain: 1
+  sleep 1
+  play :gs4,sustain: 0.5
+  sleep 0.5
+  play :e4,sustain: 0.5
+  sleep 0.5
+  play :ds4,sustain: 1
+  sleep 1
+  play :gs4,sustain: 0.5
+  sleep 0.5
+  play :ds4,sustain: 0.5
+  sleep 0.5
+  #M2
+  play :b3,sustain: 0.5
+  sleep 0.5
+  play :cs4,sustain: 0.5
+  sleep 0.5
+  play :a4,sustain: 0.5
+  sleep 0.5
+  play :cs4,sustain: 0.5
+  sleep 0.5
+  play :b3,sustain: 0.5
+  sleep 0.5
+  play :gs4,sustain: 0.5
+  sleep 0.5
+  play :b3,sustain: 0.5
+  sleep 0.5
+  play :gs4,sustain: 0.5
+  sleep 0.5
 end
 
-#mesure 2&4 
-live_loop highnote2 do
-play :b3
-sleep .0265
-play :cs4
-sleep .0265
-play :a4
-sleep .0625
-play :cs4
-sleep .0265
-play :b3
-sleep .0265
-play :gs4
-sleep .0265
-play :b3
-sleep .0265
-play :g4
-sleep .0265
-end
+#mesure 2&4
 
-live_loop :low_notes do
-
-#measure5
-play :e3
-play :cs3
-play :gs2
-sleep 1
-play :r
-sleep 0.5
-play :ds3
-play :b3
-play :fs2
-sleep 0.5
-play :ds3
-play :b3
-play :fs2
-sleep 1
-play :r
-sleep 0.5
-play :e3
-play :cs3
-play :a2
-sleep 0.5
-
-#measure6
-play :e3
-play :cs3
-play :a2
-sleep 1
-play :r
-sleep 0.5
-play :e3
-play :b2
-play :gs2
-sleep 0.5
-play :e3
-play :b2
-play :gs2
-sleep 1
-play :r
-sleep 0.5
-play :e3
-play :cs3
-play :gs2
-sleep 0.5
+live_loop :bottem do
+  sleep 16
+  #measure5
+  play :e3
+  play :cs3
+  play :gs2
+  sleep 1
+  play :r
+  sleep 0.5
+  play :ds3
+  play :b3
+  play :fs2
+  sleep 0.5
+  play :ds3
+  play :b3
+  play :fs2
+  sleep 1
+  play :r
+  sleep 0.5
+  play :e3
+  play :cs3
+  play :a2
+  sleep 0.5
+  
+  #measure6
+  play :e3
+  play :cs3
+  play :a2
+  sleep 1
+  play :r
+  sleep 0.5
+  play :e3
+  play :b2
+  play :gs2
+  sleep 0.5
+  play :e3
+  play :b2
+  play :gs2
+  sleep 1
+  play :r
+  sleep 0.5
+  play :e3
+  play :cs3
+  play :gs2
+  sleep 0.5
 end
