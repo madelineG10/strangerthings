@@ -3,10 +3,18 @@ x =sleep 1
 
 n = 21
 
-play n
-x
+
 87.times do
+  play n
   n = n + 1
+  sleep 0.1
+end
+
+n = 108
+
+87.times do
+  play n
+  n = n - 1
   play n
   sleep 0.1
 end
