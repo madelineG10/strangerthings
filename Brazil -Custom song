@@ -1,49 +1,49 @@
-# Welcome to Sonic Pi
-v="C:/Users/Madeline Garcia/Downloads/Vocals-alone.wav"
-
+#low notes
 define:tempName do
-  play :e3
-  play :cs3
-  play :gs2
-  sleep 1
-  play :r
-  sleep 0.5
-  play :ds3
-  play :b3
-  play :fs2
-  sleep 0.5
-  play :ds3
-  play :b3
-  play :fs2
-  sleep 1
-  play :r
-  sleep 0.5
-  play :e3
-  play :cs3
-  play :a2
-  sleep 0.5
-  
-  #m6
-  play :e3
-  play :cs3
-  play :a2
-  sleep 1
-  play :r
-  sleep 0.5
-  play :e3
-  play :b2
-  play :gs2
-  sleep 0.5
-  play :e3
-  play :b2
-  play :gs2
-  sleep 1
-  play :r
-  sleep 0.5
-  play :e3
-  play :cs3
-  play :gs2
-  sleep 0.5
+  with_fx :normaliser do
+    play :e3
+    play :cs3
+    play :gs2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :ds3
+    play :b3
+    play :fs2
+    sleep 0.5
+    play :ds3
+    play :b3
+    play :fs2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :e3
+    play :cs3
+    play :a2
+    sleep 0.5
+    
+    #m6
+    play :e3
+    play :cs3
+    play :a2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :e3
+    play :b2
+    play :gs2
+    sleep 0.5
+    play :e3
+    play :b2
+    play :gs2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :e3
+    play :cs3
+    play :gs2
+    sleep 0.5
+  end
 end
 
 sample v ,amp:3
