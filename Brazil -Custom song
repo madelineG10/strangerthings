@@ -1,26 +1,30 @@
+# Welcome to Sonic Pi
+v="C:/Users/Madeline Garcia/Downloads/Vocals-alone.wav"
 #low notes
+
+S = [1,0.5,0.5,1,0.5,0.5]
 define:tempName do
   with_fx :normaliser do
     play :e3
     play :cs3
     play :gs2
-    sleep 1
+    sleep S[0]
     play :r
-    sleep 0.5
+    sleep S[1]
     play :ds3
     play :b3
     play :fs2
-    sleep 0.5
+    sleep S[2]
     play :ds3
     play :b3
     play :fs2
-    sleep 1
+    sleep S[3]
     play :r
-    sleep 0.5
+    sleep S[4]
     play :e3
     play :cs3
     play :a2
-    sleep 0.5
+    sleep S[5]
     
     #m6
     play :e3
@@ -31,17 +35,17 @@ define:tempName do
     sleep 0.5
     play :e3
     play :b2
-    play :gs2
+    play :gs2, amp: 0.85
     sleep 0.5
-    play :e3
-    play :b2
-    play :gs2
+    play :e3, amp: 0.80
+    play :b2, amp: 0.70
+    play :gs2, amp: 0.60
     sleep 1
-    play :r
+    play :r, amp: 0.50
     sleep 0.5
-    play :e3
-    play :cs3
-    play :gs2
+    play :e3, amp: 0.35
+    play :cs3, amp: 0.30
+    play :gs2, amp: 0.25
     sleep 0.5
   end
 end
