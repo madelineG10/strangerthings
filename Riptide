@@ -1,9 +1,13 @@
 # Welcome to Sonic Pi (Riptide)
 v= "C:/Users/Madeline Garcia/Desktop/Riptide.wav"
 
+fade= [ 1, 0.75, 0.5, 0.25]
+i = 0
+
 use_bpm 102
 use_synth :piano
 
+#funtion for topnotes#
 define :topNotes do |x|
   play :c5
   sleep 0.25
@@ -17,12 +21,14 @@ define :topNotes do |x|
   sleep 0.75
 end
 
+
 define :low do
-  play a2
+  play :a2
+  sample :drum_bass_soft, amp: 0.5
+  sleep 1
 end
 
-#bridge m1-2
-4.times do
+define :bridge do
   play :d4
   sleep 0.25
   play :e4
@@ -38,18 +44,31 @@ end
   sleep 0.5
 end
 
+#bridge m1-2 (not in a funtion)
+4.times do
+  bridge
+end
+
 sample v
-#---Low---
+#---Low--- called#
 live_loop :low do
   10.times do
-    play :a2
-    sample :drum_bass_soft, amp: 0.5
-    sleep 1
+    low
   end
   stop
 end
-#(quick top notes m3-4)
+# ---top notes--- called#
 2.times do
   topNotes :d5
   topNotes :a4
+end
+
+sleep 9
+1.times do
+  play low
+end
+
+4.times do
+  bridge, amp = (fade)
+  i = i + 1
 end
