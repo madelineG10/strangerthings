@@ -9,16 +9,18 @@ use_synth :piano
 
 #funtion for topnotes#
 define :topNotes do |x|
-  play :c5
-  sleep 0.25
-  play :c5
-  sleep 0.5
-  play :e5
-  #(stretch?)
-  sleep 0.5
-  play x
-  #d5 & a4
-  sleep 0.75
+  with_fx :normaliser do
+    play :c5
+    sleep 0.25
+    play :c5
+    sleep 0.5
+    play :e5
+    #(stretch?)
+    sleep 0.5
+    play x
+    #d5 & a4
+    sleep 0.75
+  end
 end
 
 
@@ -28,25 +30,25 @@ define :low do
   sleep 1
 end
 
-define :bridge do
-  play :d4
+define :bridge do |x|
+  play :d4, amp:x
   sleep 0.25
-  play :e4
+  play :e4, amp:x
   sleep 0.25
-  play :e4
+  play :e4, amp:x
   sleep 0.25
-  play :g4
+  play :g4, amp:x
   #(stretch/tie)
   sleep 0.5
-  play :c4
+  play :c4, amp:x
   sleep 0.25
-  play :e4
+  play :e4, amp:x
   sleep 0.5
 end
 
 #bridge m1-2 (not in a funtion)
 4.times do
-  bridge
+  bridge 1
 end
 
 sample v
@@ -68,7 +70,10 @@ sleep 9
   play low
 end
 
-4.times do
-  bridge, amp = (fade)
-  i = i + 1
+2.times do
+  bridge 0.5
+end
+
+2.times do
+  bridge 0.25
 end
