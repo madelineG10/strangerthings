@@ -1,13 +1,26 @@
-# Welcome to Sonic Pi (Riptide)
-v= "C:/Users/Madeline Garcia/Desktop/Riptide.wav"
+v = "C:/Users/Madeline Garcia/Desktop/Riptide.wav"
 
-fade= [ 1, 0.75, 0.5, 0.25]
+train = [:ambi_choir, :ambi_drone,:ambi_piano]
 i = 0
+
+live_loop :transiton do
+  3.times do
+    sample train[i]
+    sleep 1
+    i = i + 1
+    sleep 0.5
+  end
+  i=0
+  stop
+end
+
+
+sleep 32
 
 use_bpm 102
 use_synth :piano
 
-#funtion for topnotes#
+#function for topnotes#
 define :topNotes do |x|
   with_fx :normaliser do
     play :c5
@@ -15,7 +28,7 @@ define :topNotes do |x|
     play :c5
     sleep 0.5
     play :e5
-    #(stretch/tie)
+    #(stretch?)
     sleep 0.5
     play x
     #d5 & a4
