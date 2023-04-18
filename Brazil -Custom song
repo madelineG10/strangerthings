@@ -105,7 +105,7 @@ live_loop :top do
   sleep 0.5
 end
 
-#mesure 2&4
+#mesure 2&4 (bottem notes(set of 3)) 
 live_loop :bottom do
   sleep 16
   4.times do
