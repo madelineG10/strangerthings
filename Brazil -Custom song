@@ -1,114 +1,123 @@
 # Welcome to Sonic Pi (Brazil)
+# Welcome to Sonic Pi (Brazil)
 v="C:/Users/Madeline Garcia/Downloads/Vocals-alone.wav"
 
 topnotes = [:b3,:cs4,:a4,:cs4,:b3,:gs4,:b3,:gs4]
 i = 0
-# play notes[i]
-#sleep 0.5
-#i = i + 1
-# puts i
 
 
-#funtion- low notes
-define :tempName do |x|
-  with_fx :normaliser do
-    
-    play :e3, amp: x
-    play :cs3, amp: x
-    play :gs2, amp: x
-    sleep 1
-    play :r
-    sleep 0.5
-    play :ds3, amp: x
-    play :b3, amp: x
-    play :fs2, amp: x
-    sleep 0.5
-    play :ds3, amp: x
-    play :b3, amp: x
-    play :fs2, amp: x
-    sleep 1
-    play :r
-    sleep 0.5
-    play :e3, amp: x
-    play :cs3, amp: x
-    play :a2, amp: x
-    sleep 0.5
-    
-    #m6
-    play :e3, amp: x
-    play :cs3, amp: x
-    play :a2, amp: x
-    sleep 1
-    play :r
-    sleep 0.5
-    play :e3, amp: x
-    play :b2, amp: x
-    play :gs2, amp: x
-    sleep 0.5
-    play :e3, amp: x
-    play :b2, amp: x
-    play :gs2, amp: x
-    sleep 1
-    play :r
-    sleep 0.5
-    play :e3, amp: x
-    play :cs3, amp: x
-    play :gs2, amp: x
-    sleep 0.5
-  end
-end
 
-#----Notes start-----#
-sample v, amp:3
-sleep 1
-#mesure 1&3
-use_bpm 120
-use_synth :piano
-live_loop :top do
-  
-  #M1
-  play :e4,sustain: 1
+#Function- top notes
+define :topnotes do |x|
+  play :e4,sustain: 1, amp: x
   sleep 1
-  play :gs4,sustain: 0.5
+  play :gs4,sustain: 0.5, amp: x
   sleep 0.5
-  play :e4,sustain: 0.5
+  play :e4,sustain: 0.5, amp: x
   sleep 0.5
   play :ds4,sustain: 1
   sleep 1
-  play :gs4,sustain: 0.5
+  play :gs4,sustain: 0.5, amp: x
   sleep 0.5
-  play :ds4,sustain: 0.5
+  play :ds4,sustain: 0.5, amp: x
   sleep 0.5
-  #M2
   
   
-  # play notes[i]
-  #sleep 0.5
-  #i = i + 1
-  # puts i
-  #
-  play :b3,sustain: 0.5
+  play :b3,sustain: 0.5, amp: x
   sleep 0.5
-  play :cs4,sustain: 0.5
+  play :cs4,sustain: 0.5, amp: x
   sleep 0.5
-  play :a4,sustain: 0.5
+  play :a4,sustain: 0.5, amp: x
   sleep 0.5
-  play :cs4,sustain: 0.5
+  play :cs4,sustain: 0.5, amp: x
   sleep 0.5
-  play :b3,sustain: 0.5
+  play :b3,sustain: 0.5, amp: x
   sleep 0.5
-  play :gs4,sustain: 0.5
+  play :gs4,sustain: 0.5, amp: x
   sleep 0.5
-  play :b3,sustain: 0.5
+  play :b3,sustain: 0.5, amp: x
   sleep 0.5
-  play :gs4,sustain: 0.5
+  play :gs4,sustain: 0.5, amp: x
   sleep 0.5
 end
 
-#mesure 2&4 (bottem notes(set of 3)) 
-live_loop :bottom do
-  sleep 16
-  4.times do
-    tempName 1
+
+#function- low notes
+define :tempName do
+  with_fx :normaliser do
+    
+    play :e3
+    play :cs3
+    play :gs2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :ds3
+    play :b3
+    play :fs2
+    sleep 0.5
+    play :ds3
+    play :b3
+    play :fs2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :e3
+    play :cs3
+    play :a2
+    sleep 0.5
+    
+    #m6
+    play :e3
+    play :cs3
+    play :a2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :e3
+    play :b2
+    play :gs2
+    sleep 0.5
+    play :e3
+    play :b2
+    play :gs2
+    sleep 1
+    play :r
+    sleep 0.5
+    play :e3
+    play :cs3
+    play :gs2
+    sleep 0.5
   end
+end
+
+#---------Notes start----------#
+sample v, amp:3
+sleep 1
+#mesure 1&3
+
+use_bpm 120
+use_synth :piano
+
+#M1 & 2
+## 24 or 48?? (test))
+live_loop :top do
+  10.times do
+    puts "TOP"
+    topnotes 1
+  end
+  stop
+end
+
+#m 2&4 (bottom notes(set of 3))
+live_loop :bottom do
+  2.times do
+    puts "Bottom"
+    sleep 16
+    4.times do
+      puts "sound"
+      tempName
+    end
+  end
+  stop
 end
