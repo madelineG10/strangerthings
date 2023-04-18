@@ -15,7 +15,7 @@ define :topNotes do |x|
     play :c5
     sleep 0.5
     play :e5
-    #(stretch?)
+    #(stretch/tie)
     sleep 0.5
     play x
     #d5 & a4
