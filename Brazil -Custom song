@@ -58,7 +58,7 @@ define :tempName do |x|
   end
 end
 
-
+#----Notes start-----#
 sample v, amp:3
 sleep 1
 #mesure 1&3
