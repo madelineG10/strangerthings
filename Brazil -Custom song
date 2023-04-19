@@ -1,101 +1,4 @@
 # Welcome to Sonic Pi (Brazil)
-# Welcome to Sonic Pi (Brazil)
-v="C:/Users/Madeline Garcia/Downloads/Vocals-alone.wav"
-
-topnotes = [:b3,:cs4,:a4,:cs4,:b3,:gs4,:b3,:gs4]
-i = 0
-
-
-
-#Function- top notes
-define :topnotes do |x|
-  play :e4,sustain: 1, amp: x
-  sleep 1
-  play :gs4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :e4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :ds4,sustain: 1
-  sleep 1
-  play :gs4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :ds4,sustain: 0.5, amp: x
-  sleep 0.5
-  
-  
-  play :b3,sustain: 0.5, amp: x
-  sleep 0.5
-  play :cs4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :a4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :cs4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :b3,sustain: 0.5, amp: x
-  sleep 0.5
-  play :gs4,sustain: 0.5, amp: x
-  sleep 0.5
-  play :b3,sustain: 0.5, amp: x
-  sleep 0.5
-  play :gs4,sustain: 0.5, amp: x
-  sleep 0.5
-end
-
-
-#function- low notes
-define :tempName do
-  with_fx :normaliser do
-    
-    play :e3
-    play :cs3
-    play :gs2
-    sleep 1
-    play :r
-    sleep 0.5
-    play :ds3
-    play :b3
-    play :fs2
-    sleep 0.5
-    play :ds3
-    play :b3
-    play :fs2
-    sleep 1
-    play :r
-    sleep 0.5
-    play :e3
-    play :cs3
-    play :a2
-    sleep 0.5
-    
-    #m6
-    play :e3
-    play :cs3
-    play :a2
-    sleep 1
-    play :r
-    sleep 0.5
-    play :e3
-    play :b2
-    play :gs2
-    sleep 0.5
-    play :e3
-    play :b2
-    play :gs2
-    sleep 1
-    play :r
-    sleep 0.5
-    play :e3
-    play :cs3
-    play :gs2
-    sleep 0.5
-  end
-end
-
-#---------Notes start----------#
-sample v, amp:3
-sleep 1
-#mesure 1&3
-
 use_bpm 120
 use_synth :piano
 
@@ -121,3 +24,12 @@ live_loop :bottom do
   end
   stop
 end
+
+sleep 96
+puts "T"
+sample :ambi_soft_buzz,amp: 1
+sleep 1
+sample :ambi_soft_buzz,amp: 0.5
+sleep 1
+sample :ambi_soft_buzz,amp: 0.25
+sleep 1
